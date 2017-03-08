@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+    
+    <entry>
+      <title><![CDATA[常用命令集合]]></title>
+      <url>%2F2017%2F03%2F07%2F%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%9B%86%E5%90%88%2F</url>
+      <content type="text"><![CDATA[新建一篇博客1hexo new post "article title" 文章编辑好之后，运行生成、部署命令：1hexo g // 生成 1hexo d // 部署 执行下面的命令，相当于上面两条命令的效果1hexo d -g #在部署前先生成]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[新的开始]]></title>
+      <url>%2F2017%2F03%2F07%2F%E6%96%B0%E7%9A%84%E5%BC%80%E5%A7%8B%2F</url>
+      <content type="text"><![CDATA[这是我的第一个博客文章，新的开始。]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[Hello World]]></title>
+      <url>%2F2017%2F03%2F07%2Fhello-world%2F</url>
+      <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    </entry>
+
+    
+  
+  
+</search>
