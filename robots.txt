@@ -1,0 +1,7 @@
+# hexo robots.txt
+User-agent: *
+Allow: /
+Allow: /archives/
+Disallow: /js/
+Disallow: /css/
+Sitemap: https://xushuo.github.io/sitemap.xml
