@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xushuo.github.io/"/>
-  <updated>2017-03-07T05:53:05.524Z</updated>
+  <updated>2017-03-08T07:27:01.442Z</updated>
   <id>https://xushuo.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://xushuo.github.io/2017/03/07/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%9B%86%E5%90%88/"/>
     <id>https://xushuo.github.io/2017/03/07/常用命令集合/</id>
     <published>2017-03-07T05:49:04.000Z</published>
-    <updated>2017-03-07T05:53:05.524Z</updated>
+    <updated>2017-03-08T07:27:01.442Z</updated>
     
     <content type="html"><![CDATA[<p>新建一篇博客<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new post <span class="string">"article title"</span></div></pre></td></tr></table></figure></p>
 <p>文章编辑好之后，运行生成、部署命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g   // 生成</div></pre></td></tr></table></figure></p>
@@ -30,10 +30,16 @@
     
     <summary type="html">
     
-      &lt;p&gt;新建一篇博客&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;di
+      hexo对文章操作
     
     </summary>
     
+      <category term="Hexo命令教程" scheme="https://xushuo.github.io/categories/Hexo%E5%91%BD%E4%BB%A4%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="命令" scheme="https://xushuo.github.io/tags/%E5%91%BD%E4%BB%A4/"/>
+    
+      <category term="hexo" scheme="https://xushuo.github.io/tags/hexo/"/>
     
   </entry>
   
