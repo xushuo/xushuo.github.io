@@ -4,9 +4,9 @@
   <subtitle>表闹蛋蛋酱</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://xushuo.github.io/"/>
   <updated>2017-03-07T05:53:05.524Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://xushuo.github.io/</id>
   
   <author>
     <name>Xs</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>常用命令集合</title>
-    <link href="http://yoursite.com/2017/03/07/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%9B%86%E5%90%88/"/>
-    <id>http://yoursite.com/2017/03/07/常用命令集合/</id>
+    <link href="https://xushuo.github.io/2017/03/07/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%9B%86%E5%90%88/"/>
+    <id>https://xushuo.github.io/2017/03/07/常用命令集合/</id>
     <published>2017-03-07T05:49:04.000Z</published>
     <updated>2017-03-07T05:53:05.524Z</updated>
     
@@ -39,8 +39,8 @@
   
   <entry>
     <title>新的开始</title>
-    <link href="http://yoursite.com/2017/03/07/%E6%96%B0%E7%9A%84%E5%BC%80%E5%A7%8B/"/>
-    <id>http://yoursite.com/2017/03/07/新的开始/</id>
+    <link href="https://xushuo.github.io/2017/03/07/%E6%96%B0%E7%9A%84%E5%BC%80%E5%A7%8B/"/>
+    <id>https://xushuo.github.io/2017/03/07/新的开始/</id>
     <published>2017-03-07T02:56:21.000Z</published>
     <updated>2017-03-07T02:58:59.335Z</updated>
     
@@ -55,14 +55,14 @@
     </summary>
     
     
-      <category term="开始" scheme="http://yoursite.com/tags/%E5%BC%80%E5%A7%8B/"/>
+      <category term="开始" scheme="https://xushuo.github.io/tags/%E5%BC%80%E5%A7%8B/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2017/03/07/hello-world/"/>
-    <id>http://yoursite.com/2017/03/07/hello-world/</id>
+    <link href="https://xushuo.github.io/2017/03/07/hello-world/"/>
+    <id>https://xushuo.github.io/2017/03/07/hello-world/</id>
     <published>2017-03-07T02:28:18.999Z</published>
     <updated>2017-03-07T02:28:18.999Z</updated>
     
