@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xushuo.github.io/"/>
-  <updated>2017-03-17T03:18:35.277Z</updated>
+  <updated>2017-03-17T06:22:37.586Z</updated>
   <id>https://xushuo.github.io/</id>
   
   <author>
@@ -17,10 +17,24 @@
   
   <entry>
     <title>来谈谈Promise</title>
+    <link href="https://xushuo.github.io/2017/03/17/%E6%9D%A5%E8%B0%88%E8%B0%88Promise-1/"/>
+    <id>https://xushuo.github.io/2017/03/17/来谈谈Promise-1/</id>
+    <published>2017-03-17T06:22:37.000Z</published>
+    <updated>2017-03-17T06:22:37.586Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>来谈谈Promise</title>
     <link href="https://xushuo.github.io/2017/03/17/%E6%9D%A5%E8%B0%88%E8%B0%88Promise/"/>
     <id>https://xushuo.github.io/2017/03/17/来谈谈Promise/</id>
     <published>2017-03-17T01:39:43.000Z</published>
-    <updated>2017-03-17T03:18:35.277Z</updated>
+    <updated>2017-03-17T06:22:31.621Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Promise——异步编程解决方案"><a href="#Promise——异步编程解决方案" class="headerlink" title="Promise——异步编程解决方案"></a>Promise——异步编程解决方案</h1><p>酱酱这段时间又学习了下nodejs，发现了promise这个神奇的东东。看了网上的几篇博文，各种思想在脑中疯狂的对战，乱的很。/(ㄒoㄒ)/~~实在没办法，希望一边写一边理解吧-。-</p>
 <hr>
@@ -43,7 +57,7 @@
     
     <summary type="html">
     
-      简单了解下Promise
+      &lt;h1 id=&quot;Promise——异步编程解决方案&quot;&gt;&lt;a href=&quot;#Promise——异步编程解决方案&quot; class=&quot;headerlink&quot; title=&quot;Promise——异步编程解决方案&quot;&gt;&lt;/a&gt;Promise——异步编程解决方案&lt;/h1&gt;&lt;p&gt;酱酱这段时间又学习了
     
     </summary>
     
