@@ -105,7 +105,7 @@ npm$ npm install vue
 命令行工具vue.js 提供一个官方的命令">
 <meta property="og:image" content="https://xushuo.github.io/images/vue/1.png">
 <meta property="og:image" content="https://cn.vuejs.org/images/lifecycle.png">
-<meta property="og:updated_time" content="2017-03-23T08:57:11.455Z">
+<meta property="og:updated_time" content="2017-03-23T09:43:09.938Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VUE官方教程随笔">
 <meta name="twitter:description" content="VUE.js官方教程随笔好吧~酱酱本来在看es6的promise，偶然发现了VUE.JS,一不小心看了下大概，发现还挺有趣。所以索性就先把promise撂在一边，去官网学习下vue.。当然我也不确定这个会更新到什么时候，哈哈。
@@ -573,7 +573,21 @@ data: {
 <li>v-show 不支持 template语法</li>
 <li>v-show css的属性 display的切换  v-if涉及到元素的创建以及销毁</li>
 </ul>
-<h2 id="列表渲染"><a href="#列表渲染" class="headerlink" title="列表渲染"></a>列表渲染</h2><h3 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h3>
+<h2 id="列表渲染"><a href="#列表渲染" class="headerlink" title="列表渲染"></a>列表渲染</h2><h3 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h3><p>item in items  语法渲染  也可以用  item of items</p>
+<pre><code>&lt;ul id=&quot;example-2&quot;&gt;
+  &lt;li v-for=&quot;(item, index) in items&quot;&gt;
+    {{ parentMessage }} - {{ index }} - {{ item.message }}
+  &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre><ul>
+<li>v-for 支持template标签</li>
+<li>v-for 支持遍历对象<br>参数分别为 value key index </li>
+</ul>
+<pre><code>&lt;p v-for=&quot;(val, key , index) in object&quot;&gt;{{ index+" : "+key+" - "+val }}&lt;/p&gt;
+</code></pre><ul>
+<li>v-for支持取整数<br><code>&lt;span v-for=&quot;n in 10&quot;&gt;&lt;/span&gt;</code></li>
+</ul>
+
       
     </div>
 
