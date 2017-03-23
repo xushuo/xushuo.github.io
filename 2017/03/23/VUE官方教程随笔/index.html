@@ -105,7 +105,7 @@ npm$ npm install vue
 命令行工具vue.js 提供一个官方的命令">
 <meta property="og:image" content="https://xushuo.github.io/images/vue/1.png">
 <meta property="og:image" content="https://cn.vuejs.org/images/lifecycle.png">
-<meta property="og:updated_time" content="2017-03-23T08:14:30.541Z">
+<meta property="og:updated_time" content="2017-03-23T08:57:11.455Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VUE官方教程随笔">
 <meta name="twitter:description" content="VUE.js官方教程随笔好吧~酱酱本来在看es6的promise，偶然发现了VUE.JS,一不小心看了下大概，发现还挺有趣。所以索性就先把promise撂在一边，去官网学习下vue.。当然我也不确定这个会更新到什么时候，哈哈。
@@ -551,7 +551,29 @@ data: {
     fontSize: &apos;13px&apos;
   }
 }
-</code></pre><h2 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染   "></a>条件渲染   </h2>
+</code></pre><h2 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染   "></a>条件渲染   </h2><h3 id="v-if"><a href="#v-if" class="headerlink" title="v-if"></a>v-if</h3><p>条件判断</p>
+<pre><code>&lt;h1 v-if=&quot;ok&quot;&gt;YES&lt;/h1&gt;
+&lt;h1 v-else&gt;NO&lt;/h1&gt;
+</code></pre><p>切换多个元素，可以用 template</p>
+<pre><code>&lt;template v-if=&quot;ok&quot;&gt;
+    &lt;span&gt;s1&lt;/span&gt;
+    &lt;span&gt;s2&lt;/span&gt;
+&lt;/template&gt;
+</code></pre><p>if = v-if<br>else if = v-else-if<br>else = v-else</p>
+<h3 id="key管理可复用元素"><a href="#key管理可复用元素" class="headerlink" title="key管理可复用元素"></a>key管理可复用元素</h3><p>如果用条件语句切换同一个元素的时候，改元素将不会替换掉，只会替换掉相对应的属性。<br>如果需要替换，需要添加key</p>
+<pre><code>&lt;template v-if=&quot;loginType === &apos;username&apos;&quot;&gt;
+  &lt;label&gt;Username&lt;/label&gt;
+  &lt;input placeholder=&quot;Enter your username&quot; key=&quot;username-input&quot;&gt;
+&lt;/template&gt;
+&lt;template v-else&gt;
+  &lt;label&gt;Email&lt;/label&gt;
+  &lt;input placeholder=&quot;Enter your email address&quot; key=&quot;email-input&quot;&gt;
+&lt;/template&gt;
+</code></pre><h3 id="v-show"><a href="#v-show" class="headerlink" title="v-show"></a>v-show</h3><ul>
+<li>v-show 不支持 template语法</li>
+<li>v-show css的属性 display的切换  v-if涉及到元素的创建以及销毁</li>
+</ul>
+<h2 id="列表渲染"><a href="#列表渲染" class="headerlink" title="列表渲染"></a>列表渲染</h2><h3 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h3>
       
     </div>
 
@@ -778,7 +800,7 @@ data: {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#VUE-js官方教程随笔"><span class="nav-number">1.</span> <span class="nav-text">VUE.js官方教程随笔</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#vue的安装"><span class="nav-number">1.1.</span> <span class="nav-text">vue的安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#兼容性"><span class="nav-number">1.1.1.</span> <span class="nav-text">兼容性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm"><span class="nav-number">1.1.2.</span> <span class="nav-text">npm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令行工具"><span class="nav-number">1.1.3.</span> <span class="nav-text">命令行工具</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-js的初步体验"><span class="nav-number">1.2.</span> <span class="nav-text">vue.js的初步体验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hello-world"><span class="nav-number">1.2.1.</span> <span class="nav-text">hello world</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生命周期"><span class="nav-number">1.2.2.</span> <span class="nav-text">生命周期</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-js-模板语法"><span class="nav-number">1.3.</span> <span class="nav-text">vue.js 模板语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法"><span class="nav-number">1.3.1.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算属性"><span class="nav-number">1.3.2.</span> <span class="nav-text">计算属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#watch"><span class="nav-number">1.3.3.</span> <span class="nav-text">watch</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CLass与Style的绑定"><span class="nav-number">1.4.</span> <span class="nav-text">CLass与Style的绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#绑定html-class"><span class="nav-number">1.4.1.</span> <span class="nav-text">绑定html class</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件渲染"><span class="nav-number">1.5.</span> <span class="nav-text">条件渲染   </span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#VUE-js官方教程随笔"><span class="nav-number">1.</span> <span class="nav-text">VUE.js官方教程随笔</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#vue的安装"><span class="nav-number">1.1.</span> <span class="nav-text">vue的安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#兼容性"><span class="nav-number">1.1.1.</span> <span class="nav-text">兼容性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm"><span class="nav-number">1.1.2.</span> <span class="nav-text">npm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令行工具"><span class="nav-number">1.1.3.</span> <span class="nav-text">命令行工具</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-js的初步体验"><span class="nav-number">1.2.</span> <span class="nav-text">vue.js的初步体验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hello-world"><span class="nav-number">1.2.1.</span> <span class="nav-text">hello world</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生命周期"><span class="nav-number">1.2.2.</span> <span class="nav-text">生命周期</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-js-模板语法"><span class="nav-number">1.3.</span> <span class="nav-text">vue.js 模板语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法"><span class="nav-number">1.3.1.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算属性"><span class="nav-number">1.3.2.</span> <span class="nav-text">计算属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#watch"><span class="nav-number">1.3.3.</span> <span class="nav-text">watch</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CLass与Style的绑定"><span class="nav-number">1.4.</span> <span class="nav-text">CLass与Style的绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#绑定html-class"><span class="nav-number">1.4.1.</span> <span class="nav-text">绑定html class</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件渲染"><span class="nav-number">1.5.</span> <span class="nav-text">条件渲染   </span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#v-if"><span class="nav-number">1.5.1.</span> <span class="nav-text">v-if</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#key管理可复用元素"><span class="nav-number">1.5.2.</span> <span class="nav-text">key管理可复用元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-show"><span class="nav-number">1.5.3.</span> <span class="nav-text">v-show</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表渲染"><span class="nav-number">1.6.</span> <span class="nav-text">列表渲染</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#v-for"><span class="nav-number">1.6.1.</span> <span class="nav-text">v-for</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
