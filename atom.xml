@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xushuo.github.io/"/>
-  <updated>2017-03-23T07:22:33.301Z</updated>
+  <updated>2017-03-23T07:23:51.503Z</updated>
   <id>https://xushuo.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://xushuo.github.io/2017/03/23/VUE%E5%AE%98%E6%96%B9%E6%95%99%E7%A8%8B%E9%9A%8F%E7%AC%94/"/>
     <id>https://xushuo.github.io/2017/03/23/VUE官方教程随笔/</id>
     <published>2017-03-23T03:36:54.000Z</published>
-    <updated>2017-03-23T07:22:33.301Z</updated>
+    <updated>2017-03-23T07:23:51.503Z</updated>
     
     <content type="html"><![CDATA[<h1 id="VUE-js官方教程随笔"><a href="#VUE-js官方教程随笔" class="headerlink" title="VUE.js官方教程随笔"></a>VUE.js官方教程随笔</h1><p>好吧~酱酱本来在看es6的promise，偶然发现了VUE.JS,一不小心看了下大概，发现还挺有趣。所以索性就先把promise撂在一边，去官网学习下vue<em>.</em>。当然我也不确定这个会更新到什么时候，哈哈。</p>
 <hr>
@@ -49,7 +49,28 @@ var app = new Vue({
 </code></pre><p>vue提供了数据和dom的绑定，当代码更改，页面就会更新。有点类似于webpack的热加载和angularjs。</p>
 <h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h3><p>机智的我从官网上偷来了这个图，看起来灰常长~长~长~~~<br>所以，我就不解释了，很·清晰·<br><img src="https://cn.vuejs.org/images/lifecycle.png" alt=""></p>
 <h2 id="vue-js-模板语法"><a href="#vue-js-模板语法" class="headerlink" title="vue.js 模板语法"></a>vue.js 模板语法</h2><pre><code>之后我就使用官方的title了，毕竟只是随笔，摘抄总结些知识点
-</code></pre>]]></content>
+</code></pre><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><ul>
+<li><p>过滤器<br> 1.过滤器函数总是接受表达式的第一个值作为第一个参数，表达式的参数则从第二个开始。<br> 可以添加多个表达式。</p>
+<p> 2.过滤器可以用到两个地方 mustache 插值以及v-bind 表达式</p>
+</li>
+</ul>
+<pre><code>{{ item.label | filter(''123') }}
+filters:{
+      filter(val,arg1){
+        if(!val) return &apos;&apos;;
+        val=val.toString();
+        return val.charAt(0).toUpperCase()+val.slice(1);
+      }
+    }
+arg1 = 123 
+</code></pre><ul>
+<li>缩写 <ol>
+<li>v-on  <code>&lt;a @click=&quot;doSomething&quot;&gt;&lt;/a&gt;</code></li>
+<li>v-bind   <code>&lt;a :href=&quot;url&quot;&gt;&lt;/a&gt;</code></li>
+</ol>
+</li>
+</ul>
+<h3 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h3>]]></content>
     
     <summary type="html">
     
