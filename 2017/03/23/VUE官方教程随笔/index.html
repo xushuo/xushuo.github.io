@@ -105,7 +105,7 @@ npm$ npm install vue
 命令行工具vue.js 提供一个官方的命令">
 <meta property="og:image" content="https://xushuo.github.io/images/vue/1.png">
 <meta property="og:image" content="https://cn.vuejs.org/images/lifecycle.png">
-<meta property="og:updated_time" content="2017-03-23T07:25:46.828Z">
+<meta property="og:updated_time" content="2017-03-23T07:27:56.905Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VUE官方教程随笔">
 <meta name="twitter:description" content="VUE.js官方教程随笔好吧~酱酱本来在看es6的promise，偶然发现了VUE.JS,一不小心看了下大概，发现还挺有趣。所以索性就先把promise撂在一边，去官网学习下vue.。当然我也不确定这个会更新到什么时候，哈哈。
@@ -470,10 +470,9 @@ var app = new Vue({
 </code></pre><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><ul>
 <li>文本 mustache ： <code>&lt;span&gt;Message: &lt;/span&gt;</code> </li>
 <li>如果为一次性插入，则为  <code>&lt;span v-once&gt;This will never change: &lt;/span&gt;</code></li>
-<li><p>纯html： <code>&lt;div v-html=&quot;rawHtml&quot;&gt;&lt;/div&gt;</code></p>
-</li>
-<li><p>绑定属性： v-bind <code>&lt;div v-bind:id=&quot;dynamicId&quot;&gt;&lt;/div&gt;</code></p>
-</li>
+<li>纯html： <code>&lt;div v-html=&quot;rawHtml&quot;&gt;&lt;/div&gt;</code></li>
+<li>文本 v-text=“msg” 等价于 </li>
+<li>绑定属性： v-bind <code>&lt;div v-bind:id=&quot;dynamicId&quot;&gt;&lt;/div&gt;</code></li>
 <li>js表达式： NaN <code>&lt;div v-bind:id=&quot; &#39;list&#39; +id &quot;&gt;&lt;/div&gt;</code></li>
 <li>绑定事件 v-on  <code>&lt;a v-on:click=&quot;event&quot;&gt;&lt;/a&gt;</code></li>
 <li><p>过滤器<br> 1.过滤器函数总是接受表达式的第一个值作为第一个参数，表达式的参数则从第二个开始。<br> 可以添加多个表达式。</p>
