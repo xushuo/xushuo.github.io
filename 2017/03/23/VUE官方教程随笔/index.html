@@ -105,7 +105,7 @@ npm$ npm install vue
 命令行工具vue.js 提供一个官方的命令">
 <meta property="og:image" content="https://xushuo.github.io/images/vue/1.png">
 <meta property="og:image" content="https://cn.vuejs.org/images/lifecycle.png">
-<meta property="og:updated_time" content="2017-03-23T07:27:56.905Z">
+<meta property="og:updated_time" content="2017-03-23T08:14:30.541Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VUE官方教程随笔">
 <meta name="twitter:description" content="VUE.js官方教程随笔好吧~酱酱本来在看es6的promise，偶然发现了VUE.JS,一不小心看了下大概，发现还挺有趣。所以索性就先把promise撂在一边，去官网学习下vue.。当然我也不确定这个会更新到什么时候，哈哈。
@@ -471,9 +471,9 @@ var app = new Vue({
 <li>文本 mustache ： <code>&lt;span&gt;Message: &lt;/span&gt;</code> </li>
 <li>如果为一次性插入，则为  <code>&lt;span v-once&gt;This will never change: &lt;/span&gt;</code></li>
 <li>纯html： <code>&lt;div v-html=&quot;rawHtml&quot;&gt;&lt;/div&gt;</code></li>
-<li>文本 v-text=“msg” 等价于 </li>
+<li>文本 <code>v-text=“msg”</code> 等价于 <code></code></li>
 <li>绑定属性： v-bind <code>&lt;div v-bind:id=&quot;dynamicId&quot;&gt;&lt;/div&gt;</code></li>
-<li>js表达式： NaN <code>&lt;div v-bind:id=&quot; &#39;list&#39; +id &quot;&gt;&lt;/div&gt;</code></li>
+<li>js表达式： <code>NaN</code> <code>&lt;div v-bind:id=&quot; &#39;list&#39; +id &quot;&gt;&lt;/div&gt;</code></li>
 <li>绑定事件 v-on  <code>&lt;a v-on:click=&quot;event&quot;&gt;&lt;/a&gt;</code></li>
 <li><p>过滤器<br> 1.过滤器函数总是接受表达式的第一个值作为第一个参数，表达式的参数则从第二个开始。<br> 可以添加多个表达式。</p>
 <p> 2.过滤器可以用到两个地方 mustache 插值以及v-bind 表达式</p>
@@ -495,7 +495,63 @@ arg1 = 123
 </ol>
 </li>
 </ul>
-<h3 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h3>
+<h3 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h3><p>计算属性不需要再data里声明，依赖于data里面的数据，并且自动更新。计算属性只有在它的相关依赖发生改变时才会重新求值</p>
+<pre><code>&lt;h4&gt;{{ computedMsg }}&lt;/h4&gt;
+computed:{
+  computedMsg(){
+      return this.newItem.split(&apos;&apos;).reverse().join(&apos;&apos;);
+  }
+}
+</code></pre><h3 id="watch"><a href="#watch" class="headerlink" title="watch"></a>watch</h3><p>监听items的值，当发生变化，则调用handler函数。</p>
+<pre><code>watch : {
+      items : {
+        handler(oldVal, newVal){
+          Store.save(newVal);
+        },
+        deep : true
+      }
+    },
+</code></pre><h2 id="CLass与Style的绑定"><a href="#CLass与Style的绑定" class="headerlink" title="CLass与Style的绑定"></a>CLass与Style的绑定</h2><h3 id="绑定html-class"><a href="#绑定html-class" class="headerlink" title="绑定html class"></a>绑定html class</h3><ol>
+<li>class   v-bind<br><code>&lt;div v-bind:class=&quot;{ active: isActive }&quot;&gt;&lt;/div&gt;</code><br>class ’active‘ 的更新取决于 isActive的 true or false<br>多个class用 逗号 ,  分隔<br>计算属性的应用：</li>
+</ol>
+<pre><code>&lt;div v-bind:class=&quot;classObject&quot;&gt;&lt;/div&gt;
+data: {
+  isActive: true,
+  error: null
+},
+computed: {
+  classObject: function () {
+    return {
+      active: this.isActive &amp;&amp; !this.error,
+      &apos;text-danger&apos;: this.error &amp;&amp; this.error.type === &apos;fatal&apos;,
+    }
+  }
+}
+</code></pre><p> 多个class，数组形式表现</p>
+<pre><code>&lt;div v-bind:class=&quot;[activeClass, errorClass]&quot;&gt;
+data: {
+  activeClass: &apos;active&apos;,
+  errorClass: &apos;text-danger&apos;
+}
+渲染为:
+&lt;div class=&quot;active text-danger&quot;&gt;&lt;/div&gt;    
+</code></pre><ol>
+<li>style v-bind</li>
+</ol>
+<pre><code>&lt;div v-bind:style=&quot;{ color: activeColor, fontSize: fontSize + &apos;px&apos; }&quot;&gt;&lt;/div&gt;
+data: {
+  activeColor: &apos;red&apos;,
+  fontSize: 30
+}
+OR 直接绑定
+&lt;div v-bind:style=&quot;styleObject&quot;&gt;&lt;/div&gt;
+data: {
+  styleObject: {
+    color: &apos;red&apos;,
+    fontSize: &apos;13px&apos;
+  }
+}
+</code></pre><h2 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染   "></a>条件渲染   </h2>
       
     </div>
 
@@ -722,7 +778,7 @@ arg1 = 123
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#VUE-js官方教程随笔"><span class="nav-number">1.</span> <span class="nav-text">VUE.js官方教程随笔</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#vue的安装"><span class="nav-number">1.1.</span> <span class="nav-text">vue的安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#兼容性"><span class="nav-number">1.1.1.</span> <span class="nav-text">兼容性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm"><span class="nav-number">1.1.2.</span> <span class="nav-text">npm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令行工具"><span class="nav-number">1.1.3.</span> <span class="nav-text">命令行工具</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-js的初步体验"><span class="nav-number">1.2.</span> <span class="nav-text">vue.js的初步体验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hello-world"><span class="nav-number">1.2.1.</span> <span class="nav-text">hello world</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生命周期"><span class="nav-number">1.2.2.</span> <span class="nav-text">生命周期</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-js-模板语法"><span class="nav-number">1.3.</span> <span class="nav-text">vue.js 模板语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法"><span class="nav-number">1.3.1.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算属性"><span class="nav-number">1.3.2.</span> <span class="nav-text">计算属性</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#VUE-js官方教程随笔"><span class="nav-number">1.</span> <span class="nav-text">VUE.js官方教程随笔</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#vue的安装"><span class="nav-number">1.1.</span> <span class="nav-text">vue的安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#兼容性"><span class="nav-number">1.1.1.</span> <span class="nav-text">兼容性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm"><span class="nav-number">1.1.2.</span> <span class="nav-text">npm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令行工具"><span class="nav-number">1.1.3.</span> <span class="nav-text">命令行工具</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-js的初步体验"><span class="nav-number">1.2.</span> <span class="nav-text">vue.js的初步体验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hello-world"><span class="nav-number">1.2.1.</span> <span class="nav-text">hello world</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生命周期"><span class="nav-number">1.2.2.</span> <span class="nav-text">生命周期</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-js-模板语法"><span class="nav-number">1.3.</span> <span class="nav-text">vue.js 模板语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法"><span class="nav-number">1.3.1.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算属性"><span class="nav-number">1.3.2.</span> <span class="nav-text">计算属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#watch"><span class="nav-number">1.3.3.</span> <span class="nav-text">watch</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CLass与Style的绑定"><span class="nav-number">1.4.</span> <span class="nav-text">CLass与Style的绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#绑定html-class"><span class="nav-number">1.4.1.</span> <span class="nav-text">绑定html class</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件渲染"><span class="nav-number">1.5.</span> <span class="nav-text">条件渲染   </span></a></li></ol></li></ol></div>
             
 
           </div>
