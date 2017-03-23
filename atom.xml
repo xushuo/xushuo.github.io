@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xushuo.github.io/"/>
-  <updated>2017-03-20T01:24:42.250Z</updated>
+  <updated>2017-03-23T06:09:15.041Z</updated>
   <id>https://xushuo.github.io/</id>
   
   <author>
@@ -14,6 +14,59 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>VUE官方教程随笔</title>
+    <link href="https://xushuo.github.io/2017/03/23/VUE%E5%AE%98%E6%96%B9%E6%95%99%E7%A8%8B%E9%9A%8F%E7%AC%94/"/>
+    <id>https://xushuo.github.io/2017/03/23/VUE官方教程随笔/</id>
+    <published>2017-03-23T03:36:54.000Z</published>
+    <updated>2017-03-23T06:09:15.041Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="VUE-js官方教程随笔"><a href="#VUE-js官方教程随笔" class="headerlink" title="VUE.js官方教程随笔"></a>VUE.js官方教程随笔</h1><p>好吧~酱酱本来在看es6的promise，偶然发现了VUE.JS,一不小心看了下大概，发现还挺有趣。所以索性就先把promise撂在一边，去官网学习下vue<em>.</em>。当然我也不确定这个会更新到什么时候，哈哈。</p>
+<hr>
+<h2 id="vue的安装"><a href="#vue的安装" class="headerlink" title="vue的安装"></a>vue的安装</h2><h3 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h3><p>vue.js不支持ie8及其以下版本，支持所有兼容es5的浏览器。</p>
+<h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h3><p><code>$ npm install vue</code></p>
+<h3 id="命令行工具"><a href="#命令行工具" class="headerlink" title="命令行工具"></a>命令行工具</h3><p>vue.js 提供一个官方的命令行工具，可以快速搭建单页面应用，我们先用他来测试下。</p>
+<pre><code># 全局安装 vue-cli
+$ npm install --g vue-cli
+# 创建一个基于webpack模板的项目
+$ vue init webpack job
+# 安装依赖
+$ cd job
+$ npm install 
+$npm run dev
+</code></pre><p><img src="/iimages/vue/1.png" alt=""><br>上面这个就是我初步测试的一个项目,当然这个是没有路由的，init的时候会有选项，可以产生更多的功能以及模块</p>
+<h2 id="vue-js的初步体验"><a href="#vue-js的初步体验" class="headerlink" title="vue.js的初步体验"></a>vue.js的初步体验</h2><h3 id="hello-world"><a href="#hello-world" class="headerlink" title="hello world"></a>hello world</h3><pre><code>&lt;div id=&quot;app&quot;&gt;
+  {{ message }}
+&lt;/div&gt;
+
+var app = new Vue({
+  el: &apos;#app&apos;,
+  data: {
+    message: &apos;Hello Vue!&apos;
+  }
+})
+</code></pre><p>vue提供了数据和dom的绑定，当代码更改，页面就会更新。有点类似于webpack的热加载和angularjs。</p>
+<h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h3><p>机智的我从官网上偷来了这个图，看起来灰常长~长~长~~~<br>所以，我就不解释了，很·清晰·<br><img src="https://cn.vuejs.org/images/lifecycle.png" alt=""></p>
+<h2 id="vue-js-模板语法"><a href="#vue-js-模板语法" class="headerlink" title="vue.js 模板语法"></a>vue.js 模板语法</h2><pre><code>之后我就使用官方的title了，毕竟只是随笔，只是摘抄总结些知识点
+</code></pre><h3 id="插值"><a href="#插值" class="headerlink" title="插值"></a>插值</h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;VUE-js官方教程随笔&quot;&gt;&lt;a href=&quot;#VUE-js官方教程随笔&quot; class=&quot;headerlink&quot; title=&quot;VUE.js官方教程随笔&quot;&gt;&lt;/a&gt;VUE.js官方教程随笔&lt;/h1&gt;&lt;p&gt;好吧~酱酱本来在看es6的promise，偶然发现了VUE.
+    
+    </summary>
+    
+      <category term="教程" scheme="https://xushuo.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="vue.js" scheme="https://xushuo.github.io/tags/vue-js/"/>
+    
+      <category term="教程" scheme="https://xushuo.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="前端" scheme="https://xushuo.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>来谈谈Promise</title>
