@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xushuo.github.io/"/>
-  <updated>2017-03-24T03:36:07.724Z</updated>
+  <updated>2017-03-24T07:28:43.256Z</updated>
   <id>https://xushuo.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://xushuo.github.io/2017/03/23/VUE%E5%AE%98%E6%96%B9%E6%95%99%E7%A8%8B%E9%9A%8F%E7%AC%94/"/>
     <id>https://xushuo.github.io/2017/03/23/VUE官方教程随笔/</id>
     <published>2017-03-23T03:36:54.000Z</published>
-    <updated>2017-03-24T03:36:07.724Z</updated>
+    <updated>2017-03-24T07:28:43.256Z</updated>
     
     <content type="html"><![CDATA[<p>好吧~酱酱本来在看es6的promise，偶然发现了VUE.JS,一不小心看了下大概，发现还挺有趣。所以索性就先把promise撂在一边，去官网学习下vue<em>.</em>。当然我也不确定这个会更新到什么时候，哈哈。</p>
 <hr>
@@ -184,7 +184,106 @@ data: {
 })；
 vm.hello();
 </code></pre><h2 id="表单控件绑定"><a href="#表单控件绑定" class="headerlink" title="表单控件绑定"></a>表单控件绑定</h2><h3 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h3><p>v-model 可以绑定文本值<br>checkbox：<code>&lt;input type=&quot;checkbox&quot; id=&quot;checkbox&quot; v-model=&quot;checked&quot;&gt;</code><br>radio： <code>&lt;input type=&quot;radio&quot; id=&quot;one&quot; value=&quot;One&quot; v-model=&quot;picked&quot;&gt;</code><br>select： <code>&lt;select v-model=&quot;selected&quot;&gt;</code><br>v-model绑定的是标签的value<br>还可以更改绑定耳朵value。 v-bind<br><code>&lt;input  type=&quot;checkbox&quot;  v-model=&quot;toggle&quot;  v-bind:true-value=&quot;a&quot;  v-bind:false-value=&quot;b&quot; &gt;</code><br><code>&lt;input type=&quot;radio&quot; v-model=&quot;pick&quot; v-bind:value=&quot;a&quot;&gt;</code><br>过滤收尾空格： <code>&lt;input v-model.trim=&quot;msg&quot;&gt;</code></p>
-<h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2>]]></content>
+<h2 id="组件-component"><a href="#组件-component" class="headerlink" title="组件 component"></a>组件 component</h2><h3 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h3><p>命名尽量遵守W3C规则(小写并包含一个短杠)</p>
+<pre><code>#注册全局组件
+Vue.component(&apos;&apos;my-componetn&apos;,{
+    template: &apos;&lt;div&gt;hello&lt;/div&gt;&apos;
+});
+#局部注册
+new Vue({
+  components:{
+    &apos;my-btn&apos;: {
+        data(){
+           return {
+             id: 10
+           }
+         }, 
+        template: &apos;&lt;button v-on:click=&quot;id++&quot;&gt;{{ id }}&lt;/button&gt;&apos;
+      }
+  }
+})
+</code></pre><h3 id="组件传递数据"><a href="#组件传递数据" class="headerlink" title="组件传递数据"></a>组件传递数据</h3><ol>
+<li>prop<br>子组件用 props 声明所需的<strong>字符串</strong>   </li>
+</ol>
+<pre><code>Vue.component(&apos;child&apos;, {
+  // 声明 props
+  props: [&apos;message&apos;],
+  // 就像 data 一样，prop 可以用在模板内
+  // 同样也可以在 vm 实例中像 “this.message” 这样使用
+  template: &apos;&lt;span&gt;{{ message }}&lt;/span&gt;&apos;
+})
+#传值 
+&lt;child message=&quot;hello!&quot;&gt;&lt;/child&gt;       
+</code></pre><blockquote>
+<p><strong>Note:</strong></p>
+<ul>
+<li>HTML 特性是不区分大小写的。所以，当使用的不是字符串模版，camelCased (驼峰式) 命名的 prop 需要转换为相对应的 kebab-case (短横线隔开式) 命名</li>
+</ul>
+</blockquote>
+<pre><code>Vue.component(&apos;child&apos;, {
+  // camelCase in JavaScript
+  props: [&apos;myMessage&apos;],
+  template: &apos;&lt;span&gt;{{ myMessage }}&lt;/span&gt;&apos;
+})
+&lt;!-- kebab-case in HTML --&gt;
+&lt;child my-message=&quot;hello!&quot;&gt;&lt;/child&gt;
+</code></pre><ul>
+<li>如果需要动态传值，绑定父子关系 <strong>单项绑定</strong>，则用 v-bind:my-mysssage 。</li>
+<li>子组件不应该在内部改变prop。</li>
+</ul>
+<pre><code>① ： 定义一个局部变量，并用 prop 的值初始化它：
+props: [&apos;initialCounter&apos;],
+data: function () {
+  return { counter: this.initialCounter }
+}
+② ： 定义一个计算属性，处理 prop 的值并返回。
+props: [&apos;size&apos;],
+computed: {
+  normalizedSize: function () {
+    return this.size.trim().toLowerCase()
+  }
+}
+</code></pre><blockquote>
+<p><strong>Tip:</strong> 注意在 JavaScript 中对象和数组是引用类型，指向同一个内存空间，如果 prop 是一个对象或数组，在子组件内部改变它会影响父组件的状态。</p>
+<ol>
+<li>自定义事件<br>vue的事件接口<ul>
+<li>$on(eventName) 监听事件</li>
+<li>$emit(eventName) 触发事件</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+<pre><code>&lt;div id=&quot;counter-event-example&quot;&gt;
+  &lt;p&gt;{{ total }}&lt;/p&gt;
+  &lt;button-counter v-on:increment=&quot;incrementTotal&quot;&gt;&lt;/button-counter&gt;
+  &lt;button-counter v-on:increment=&quot;incrementTotal&quot;&gt;&lt;/button-counter&gt;
+&lt;/div&gt;
+Vue.component(&apos;button-counter&apos;, {
+  template: &apos;&lt;button v-on:click=&quot;increment&quot;&gt;{{ counter }}&lt;/button&gt;&apos;,
+  data: function () {
+    return {
+      counter: 0
+    }
+  },
+  methods: {
+    increment: function () {
+      this.counter += 1
+      this.$emit(&apos;increment&apos;)
+    }
+  },
+})
+new Vue({
+  el: &apos;#counter-event-example&apos;,
+  data: {
+    total: 0
+  },
+  methods: {
+    incrementTotal: function () {
+      this.total += 1
+    }
+  }
+})
+</code></pre>]]></content>
     
     <summary type="html">
     

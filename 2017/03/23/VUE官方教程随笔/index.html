@@ -105,7 +105,7 @@ npm$ npm install vue
 命令行工具vue.js 提供一个官方的命令行工具，可以快速搭建单页">
 <meta property="og:image" content="https://xushuo.github.io/images/vue/1.png">
 <meta property="og:image" content="https://cn.vuejs.org/images/lifecycle.png">
-<meta property="og:updated_time" content="2017-03-24T03:36:07.724Z">
+<meta property="og:updated_time" content="2017-03-24T07:28:43.256Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VUE官方教程随笔">
 <meta name="twitter:description" content="好吧~酱酱本来在看es6的promise，偶然发现了VUE.JS,一不小心看了下大概，发现还挺有趣。所以索性就先把promise撂在一边，去官网学习下vue.。当然我也不确定这个会更新到什么时候，哈哈。
@@ -602,7 +602,106 @@ data: {
 })；
 vm.hello();
 </code></pre><h2 id="表单控件绑定"><a href="#表单控件绑定" class="headerlink" title="表单控件绑定"></a>表单控件绑定</h2><h3 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h3><p>v-model 可以绑定文本值<br>checkbox：<code>&lt;input type=&quot;checkbox&quot; id=&quot;checkbox&quot; v-model=&quot;checked&quot;&gt;</code><br>radio： <code>&lt;input type=&quot;radio&quot; id=&quot;one&quot; value=&quot;One&quot; v-model=&quot;picked&quot;&gt;</code><br>select： <code>&lt;select v-model=&quot;selected&quot;&gt;</code><br>v-model绑定的是标签的value<br>还可以更改绑定耳朵value。 v-bind<br><code>&lt;input  type=&quot;checkbox&quot;  v-model=&quot;toggle&quot;  v-bind:true-value=&quot;a&quot;  v-bind:false-value=&quot;b&quot; &gt;</code><br><code>&lt;input type=&quot;radio&quot; v-model=&quot;pick&quot; v-bind:value=&quot;a&quot;&gt;</code><br>过滤收尾空格： <code>&lt;input v-model.trim=&quot;msg&quot;&gt;</code></p>
-<h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2>
+<h2 id="组件-component"><a href="#组件-component" class="headerlink" title="组件 component"></a>组件 component</h2><h3 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h3><p>命名尽量遵守W3C规则(小写并包含一个短杠)</p>
+<pre><code>#注册全局组件
+Vue.component(&apos;&apos;my-componetn&apos;,{
+    template: &apos;&lt;div&gt;hello&lt;/div&gt;&apos;
+});
+#局部注册
+new Vue({
+  components:{
+    &apos;my-btn&apos;: {
+        data(){
+           return {
+             id: 10
+           }
+         }, 
+        template: &apos;&lt;button v-on:click=&quot;id++&quot;&gt;{{ id }}&lt;/button&gt;&apos;
+      }
+  }
+})
+</code></pre><h3 id="组件传递数据"><a href="#组件传递数据" class="headerlink" title="组件传递数据"></a>组件传递数据</h3><ol>
+<li>prop<br>子组件用 props 声明所需的<strong>字符串</strong>   </li>
+</ol>
+<pre><code>Vue.component(&apos;child&apos;, {
+  // 声明 props
+  props: [&apos;message&apos;],
+  // 就像 data 一样，prop 可以用在模板内
+  // 同样也可以在 vm 实例中像 “this.message” 这样使用
+  template: &apos;&lt;span&gt;{{ message }}&lt;/span&gt;&apos;
+})
+#传值 
+&lt;child message=&quot;hello!&quot;&gt;&lt;/child&gt;       
+</code></pre><blockquote>
+<p><strong>Note:</strong></p>
+<ul>
+<li>HTML 特性是不区分大小写的。所以，当使用的不是字符串模版，camelCased (驼峰式) 命名的 prop 需要转换为相对应的 kebab-case (短横线隔开式) 命名</li>
+</ul>
+</blockquote>
+<pre><code>Vue.component(&apos;child&apos;, {
+  // camelCase in JavaScript
+  props: [&apos;myMessage&apos;],
+  template: &apos;&lt;span&gt;{{ myMessage }}&lt;/span&gt;&apos;
+})
+&lt;!-- kebab-case in HTML --&gt;
+&lt;child my-message=&quot;hello!&quot;&gt;&lt;/child&gt;
+</code></pre><ul>
+<li>如果需要动态传值，绑定父子关系 <strong>单项绑定</strong>，则用 v-bind:my-mysssage 。</li>
+<li>子组件不应该在内部改变prop。</li>
+</ul>
+<pre><code>① ： 定义一个局部变量，并用 prop 的值初始化它：
+props: [&apos;initialCounter&apos;],
+data: function () {
+  return { counter: this.initialCounter }
+}
+② ： 定义一个计算属性，处理 prop 的值并返回。
+props: [&apos;size&apos;],
+computed: {
+  normalizedSize: function () {
+    return this.size.trim().toLowerCase()
+  }
+}
+</code></pre><blockquote>
+<p><strong>Tip:</strong> 注意在 JavaScript 中对象和数组是引用类型，指向同一个内存空间，如果 prop 是一个对象或数组，在子组件内部改变它会影响父组件的状态。</p>
+<ol>
+<li>自定义事件<br>vue的事件接口<ul>
+<li>$on(eventName) 监听事件</li>
+<li>$emit(eventName) 触发事件</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+<pre><code>&lt;div id=&quot;counter-event-example&quot;&gt;
+  &lt;p&gt;{{ total }}&lt;/p&gt;
+  &lt;button-counter v-on:increment=&quot;incrementTotal&quot;&gt;&lt;/button-counter&gt;
+  &lt;button-counter v-on:increment=&quot;incrementTotal&quot;&gt;&lt;/button-counter&gt;
+&lt;/div&gt;
+Vue.component(&apos;button-counter&apos;, {
+  template: &apos;&lt;button v-on:click=&quot;increment&quot;&gt;{{ counter }}&lt;/button&gt;&apos;,
+  data: function () {
+    return {
+      counter: 0
+    }
+  },
+  methods: {
+    increment: function () {
+      this.counter += 1
+      this.$emit(&apos;increment&apos;)
+    }
+  },
+})
+new Vue({
+  el: &apos;#counter-event-example&apos;,
+  data: {
+    total: 0
+  },
+  methods: {
+    incrementTotal: function () {
+      this.total += 1
+    }
+  }
+})
+</code></pre>
       
     </div>
 
@@ -829,7 +928,7 @@ vm.hello();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#vue的安装"><span class="nav-number">1.</span> <span class="nav-text">vue的安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#兼容性"><span class="nav-number">1.1.</span> <span class="nav-text">兼容性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm"><span class="nav-number">1.2.</span> <span class="nav-text">npm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令行工具"><span class="nav-number">1.3.</span> <span class="nav-text">命令行工具</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-js的初步体验"><span class="nav-number">2.</span> <span class="nav-text">vue.js的初步体验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hello-world"><span class="nav-number">2.1.</span> <span class="nav-text">hello world</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生命周期"><span class="nav-number">2.2.</span> <span class="nav-text">生命周期</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-js-模板语法"><span class="nav-number">3.</span> <span class="nav-text">vue.js 模板语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法"><span class="nav-number">3.1.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算属性"><span class="nav-number">3.2.</span> <span class="nav-text">计算属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#watch"><span class="nav-number">3.3.</span> <span class="nav-text">watch</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CLass与Style的绑定"><span class="nav-number">4.</span> <span class="nav-text">CLass与Style的绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#绑定html-class"><span class="nav-number">4.1.</span> <span class="nav-text">绑定html class</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件渲染"><span class="nav-number">5.</span> <span class="nav-text">条件渲染   </span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#v-if"><span class="nav-number">5.1.</span> <span class="nav-text">v-if</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#key管理可复用元素"><span class="nav-number">5.2.</span> <span class="nav-text">key管理可复用元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-show"><span class="nav-number">5.3.</span> <span class="nav-text">v-show</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表渲染"><span class="nav-number">6.</span> <span class="nav-text">列表渲染</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#v-for"><span class="nav-number">6.1.</span> <span class="nav-text">v-for</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组变更检测"><span class="nav-number">6.2.</span> <span class="nav-text">数组变更检测</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#时间处理器"><span class="nav-number">7.</span> <span class="nav-text">时间处理器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#监听事件"><span class="nav-number">7.1.</span> <span class="nav-text">监听事件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表单控件绑定"><span class="nav-number">8.</span> <span class="nav-text">表单控件绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#v-model"><span class="nav-number">8.1.</span> <span class="nav-text">v-model</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组件"><span class="nav-number">9.</span> <span class="nav-text">组件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#vue的安装"><span class="nav-number">1.</span> <span class="nav-text">vue的安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#兼容性"><span class="nav-number">1.1.</span> <span class="nav-text">兼容性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm"><span class="nav-number">1.2.</span> <span class="nav-text">npm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令行工具"><span class="nav-number">1.3.</span> <span class="nav-text">命令行工具</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-js的初步体验"><span class="nav-number">2.</span> <span class="nav-text">vue.js的初步体验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hello-world"><span class="nav-number">2.1.</span> <span class="nav-text">hello world</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生命周期"><span class="nav-number">2.2.</span> <span class="nav-text">生命周期</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-js-模板语法"><span class="nav-number">3.</span> <span class="nav-text">vue.js 模板语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法"><span class="nav-number">3.1.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算属性"><span class="nav-number">3.2.</span> <span class="nav-text">计算属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#watch"><span class="nav-number">3.3.</span> <span class="nav-text">watch</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CLass与Style的绑定"><span class="nav-number">4.</span> <span class="nav-text">CLass与Style的绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#绑定html-class"><span class="nav-number">4.1.</span> <span class="nav-text">绑定html class</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件渲染"><span class="nav-number">5.</span> <span class="nav-text">条件渲染   </span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#v-if"><span class="nav-number">5.1.</span> <span class="nav-text">v-if</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#key管理可复用元素"><span class="nav-number">5.2.</span> <span class="nav-text">key管理可复用元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-show"><span class="nav-number">5.3.</span> <span class="nav-text">v-show</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表渲染"><span class="nav-number">6.</span> <span class="nav-text">列表渲染</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#v-for"><span class="nav-number">6.1.</span> <span class="nav-text">v-for</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组变更检测"><span class="nav-number">6.2.</span> <span class="nav-text">数组变更检测</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#时间处理器"><span class="nav-number">7.</span> <span class="nav-text">时间处理器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#监听事件"><span class="nav-number">7.1.</span> <span class="nav-text">监听事件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表单控件绑定"><span class="nav-number">8.</span> <span class="nav-text">表单控件绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#v-model"><span class="nav-number">8.1.</span> <span class="nav-text">v-model</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组件-component"><span class="nav-number">9.</span> <span class="nav-text">组件 component</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注册"><span class="nav-number">9.1.</span> <span class="nav-text">注册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件传递数据"><span class="nav-number">9.2.</span> <span class="nav-text">组件传递数据</span></a></li></ol></li></ol></div>
             
 
           </div>
