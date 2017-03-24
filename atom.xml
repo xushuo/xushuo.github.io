@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xushuo.github.io/"/>
-  <updated>2017-03-24T07:28:43.256Z</updated>
+  <updated>2017-03-24T07:57:47.447Z</updated>
   <id>https://xushuo.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://xushuo.github.io/2017/03/23/VUE%E5%AE%98%E6%96%B9%E6%95%99%E7%A8%8B%E9%9A%8F%E7%AC%94/"/>
     <id>https://xushuo.github.io/2017/03/23/VUE官方教程随笔/</id>
     <published>2017-03-23T03:36:54.000Z</published>
-    <updated>2017-03-24T07:28:43.256Z</updated>
+    <updated>2017-03-24T07:57:47.447Z</updated>
     
     <content type="html"><![CDATA[<p>好吧~酱酱本来在看es6的promise，偶然发现了VUE.JS,一不小心看了下大概，发现还挺有趣。所以索性就先把promise撂在一边，去官网学习下vue<em>.</em>。当然我也不确定这个会更新到什么时候，哈哈。</p>
 <hr>
@@ -93,9 +93,7 @@ computed:{
         deep : true
       }
     },
-</code></pre><h2 id="CLass与Style的绑定"><a href="#CLass与Style的绑定" class="headerlink" title="CLass与Style的绑定"></a>CLass与Style的绑定</h2><h3 id="绑定html-class"><a href="#绑定html-class" class="headerlink" title="绑定html class"></a>绑定html class</h3><ol>
-<li>class   v-bind<br><code>&lt;div v-bind:class=&quot;{ active: isActive }&quot;&gt;&lt;/div&gt;</code><br>class ’active‘ 的更新取决于 isActive的 true or false<br>多个class用 逗号 ,  分隔<br>计算属性的应用：</li>
-</ol>
+</code></pre><h2 id="CLass与Style的绑定"><a href="#CLass与Style的绑定" class="headerlink" title="CLass与Style的绑定"></a>CLass与Style的绑定</h2><h3 id="绑定html-class"><a href="#绑定html-class" class="headerlink" title="绑定html class"></a>绑定html class</h3><h4 id="class-v-bind"><a href="#class-v-bind" class="headerlink" title="class   v-bind"></a>class   v-bind</h4><p><code>&lt;div v-bind:class=&quot;{ active: isActive }&quot;&gt;&lt;/div&gt;</code><br> class ’active‘ 的更新取决于 isActive的 true or false<br>  多个class用 逗号 ,  分隔<br> 计算属性的应用：</p>
 <pre><code>&lt;div v-bind:class=&quot;classObject&quot;&gt;&lt;/div&gt;
 data: {
   isActive: true,
@@ -117,10 +115,7 @@ data: {
 }
 渲染为:
 &lt;div class=&quot;active text-danger&quot;&gt;&lt;/div&gt;    
-</code></pre><ol>
-<li>style v-bind</li>
-</ol>
-<pre><code>&lt;div v-bind:style=&quot;{ color: activeColor, fontSize: fontSize + &apos;px&apos; }&quot;&gt;&lt;/div&gt;
+</code></pre><h4 id="style-v-bind"><a href="#style-v-bind" class="headerlink" title="style v-bind"></a>style v-bind</h4><pre><code>&lt;div v-bind:style=&quot;{ color: activeColor, fontSize: fontSize + &apos;px&apos; }&quot;&gt;&lt;/div&gt;
 data: {
   activeColor: &apos;red&apos;,
   fontSize: 30
@@ -202,9 +197,7 @@ new Vue({
       }
   }
 })
-</code></pre><h3 id="组件传递数据"><a href="#组件传递数据" class="headerlink" title="组件传递数据"></a>组件传递数据</h3><ol>
-<li>prop<br>子组件用 props 声明所需的<strong>字符串</strong>   </li>
-</ol>
+</code></pre><h3 id="组件传递数据"><a href="#组件传递数据" class="headerlink" title="组件传递数据"></a>组件传递数据</h3><h4 id="prop"><a href="#prop" class="headerlink" title="prop"></a>prop</h4><p>子组件用 props 声明所需的<strong>字符串</strong>   </p>
 <pre><code>Vue.component(&apos;child&apos;, {
   // 声明 props
   props: [&apos;message&apos;],
@@ -245,14 +238,12 @@ computed: {
 }
 </code></pre><blockquote>
 <p><strong>Tip:</strong> 注意在 JavaScript 中对象和数组是引用类型，指向同一个内存空间，如果 prop 是一个对象或数组，在子组件内部改变它会影响父组件的状态。</p>
-<ol>
-<li>自定义事件<br>vue的事件接口<ul>
+</blockquote>
+<h4 id="自定义事件"><a href="#自定义事件" class="headerlink" title="自定义事件"></a>自定义事件</h4><p>   vue的事件接口</p>
+<ul>
 <li>$on(eventName) 监听事件</li>
 <li>$emit(eventName) 触发事件</li>
 </ul>
-</li>
-</ol>
-</blockquote>
 <pre><code>&lt;div id=&quot;counter-event-example&quot;&gt;
   &lt;p&gt;{{ total }}&lt;/p&gt;
   &lt;button-counter v-on:increment=&quot;incrementTotal&quot;&gt;&lt;/button-counter&gt;
