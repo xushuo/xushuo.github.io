@@ -5,7 +5,7 @@
     <entry>
       <title><![CDATA[VUE官方教程随笔(进阶篇)]]></title>
       <url>%2F2017%2F03%2F27%2FVUE%E5%AE%98%E6%96%B9%E6%95%99%E7%A8%8B%E9%9A%8F%E7%AC%94-%E8%BF%9B%E9%98%B6%E7%AF%87%2F</url>
-      <content type="text"><![CDATA[前一篇大概学习了下Vue.js的基础内容，现在我来看下vue的进阶篇的官方教程，之后看看能不能做一个比较全的示例。 vue的响应式原理]]></content>
+      <content type="text"><![CDATA[前一篇大概学习了下Vue.js的基础内容，现在我来看下vue的进阶篇的官方教程，之后看看能不能做一个比较全的示例。 vue的响应式原理vue.js 每个组件实例都有相对应的watcher实例对象，在组件渲染的时候，它会把属性记录为依赖。之后，当依赖项的setter被调用的时候，会通知watcher重新计算，从而致使它相关联的组件得以更新。 vue不能检测到对象属性的添加和删除 vue不允许动态添加根级响应式属性，所以必须在初始化实例前声明根级响应式属性。 过渡效果]]></content>
     </entry>
 
     

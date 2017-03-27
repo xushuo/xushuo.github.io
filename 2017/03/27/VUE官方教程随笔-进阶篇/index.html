@@ -91,20 +91,31 @@
 
 <meta name="description" content="前一篇大概学习了下Vue.js的基础内容，现在我来看下vue的进阶篇的官方教程，之后看看能不能做一个比较全的示例。
 
-vue的响应式原理">
+vue的响应式原理vue.js 每个组件实例都有相对应的watcher实例对象，在组件渲染的时候，它会把属性记录为依赖。之后，当依赖项的setter被调用的时候，会通知watcher重新计算，从而致使它相关联的组件得以更新。
+
+vue不能检测到对象属性的添加和删除
+vue不允许动态">
 <meta property="og:type" content="article">
 <meta property="og:title" content="VUE官方教程随笔(进阶篇)">
 <meta property="og:url" content="https://xushuo.github.io/2017/03/27/VUE官方教程随笔-进阶篇/index.html">
 <meta property="og:site_name" content="最阴郁的阳光">
 <meta property="og:description" content="前一篇大概学习了下Vue.js的基础内容，现在我来看下vue的进阶篇的官方教程，之后看看能不能做一个比较全的示例。
 
-vue的响应式原理">
-<meta property="og:updated_time" content="2017-03-27T01:23:08.123Z">
+vue的响应式原理vue.js 每个组件实例都有相对应的watcher实例对象，在组件渲染的时候，它会把属性记录为依赖。之后，当依赖项的setter被调用的时候，会通知watcher重新计算，从而致使它相关联的组件得以更新。
+
+vue不能检测到对象属性的添加和删除
+vue不允许动态">
+<meta property="og:image" content="https://cn.vuejs.org/images/data.png">
+<meta property="og:updated_time" content="2017-03-27T08:14:12.117Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VUE官方教程随笔(进阶篇)">
 <meta name="twitter:description" content="前一篇大概学习了下Vue.js的基础内容，现在我来看下vue的进阶篇的官方教程，之后看看能不能做一个比较全的示例。
 
-vue的响应式原理">
+vue的响应式原理vue.js 每个组件实例都有相对应的watcher实例对象，在组件渲染的时候，它会把属性记录为依赖。之后，当依赖项的setter被调用的时候，会通知watcher重新计算，从而致使它相关联的组件得以更新。
+
+vue不能检测到对象属性的添加和删除
+vue不允许动态">
+<meta name="twitter:image" content="https://cn.vuejs.org/images/data.png">
 
 
 
@@ -433,7 +444,12 @@ vue的响应式原理">
       
         <p>前一篇大概学习了下Vue.js的基础内容，现在我来看下vue的进阶篇的官方教程，之后看看能不能做一个比较全的示例。</p>
 <hr>
-<h2 id="vue的响应式原理"><a href="#vue的响应式原理" class="headerlink" title="vue的响应式原理"></a>vue的响应式原理</h2>
+<h2 id="vue的响应式原理"><a href="#vue的响应式原理" class="headerlink" title="vue的响应式原理"></a>vue的响应式原理</h2><p>vue.js 每个组件实例都有相对应的watcher实例对象，在组件渲染的时候，它会把属性记录为依赖。之后，当依赖项的setter被调用的时候，会通知watcher重新计算，从而致使它相关联的组件得以更新。<br><img src="https://cn.vuejs.org/images/data.png" alt=""></p>
+<ul>
+<li>vue不能检测到对象属性的添加和删除</li>
+<li>vue不允许动态添加根级响应式属性，所以必须在初始化实例前声明根级响应式属性。</li>
+</ul>
+<h2 id="过渡效果"><a href="#过渡效果" class="headerlink" title="过渡效果"></a>过渡效果</h2>
       
     </div>
 
@@ -662,7 +678,7 @@ vue的响应式原理">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#vue的响应式原理"><span class="nav-number">1.</span> <span class="nav-text">vue的响应式原理</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#vue的响应式原理"><span class="nav-number">1.</span> <span class="nav-text">vue的响应式原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过渡效果"><span class="nav-number">2.</span> <span class="nav-text">过渡效果</span></a></li></ol></div>
             
 
           </div>
