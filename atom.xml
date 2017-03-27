@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xushuo.github.io/"/>
-  <updated>2017-03-24T10:03:02.330Z</updated>
+  <updated>2017-03-27T01:23:08.123Z</updated>
   <id>https://xushuo.github.io/</id>
   
   <author>
@@ -16,11 +16,43 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>VUE官方教程随笔</title>
-    <link href="https://xushuo.github.io/2017/03/23/VUE%E5%AE%98%E6%96%B9%E6%95%99%E7%A8%8B%E9%9A%8F%E7%AC%94/"/>
-    <id>https://xushuo.github.io/2017/03/23/VUE官方教程随笔/</id>
+    <title>VUE官方教程随笔(进阶篇)</title>
+    <link href="https://xushuo.github.io/2017/03/27/VUE%E5%AE%98%E6%96%B9%E6%95%99%E7%A8%8B%E9%9A%8F%E7%AC%94-%E8%BF%9B%E9%98%B6%E7%AF%87/"/>
+    <id>https://xushuo.github.io/2017/03/27/VUE官方教程随笔-进阶篇/</id>
+    <published>2017-03-27T01:20:27.000Z</published>
+    <updated>2017-03-27T01:23:08.123Z</updated>
+    
+    <content type="html"><![CDATA[<p>前一篇大概学习了下Vue.js的基础内容，现在我来看下vue的进阶篇的官方教程，之后看看能不能做一个比较全的示例。</p>
+<hr>
+<h2 id="vue的响应式原理"><a href="#vue的响应式原理" class="headerlink" title="vue的响应式原理"></a>vue的响应式原理</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前一篇大概学习了下Vue.js的基础内容，现在我来看下vue的进阶篇的官方教程，之后看看能不能做一个比较全的示例。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;vue的响应式原理&quot;&gt;&lt;a href=&quot;#vue的响应式原理&quot; class=&quot;headerlink&quot; title=&quot;vue的
+    
+    </summary>
+    
+      <category term="教程" scheme="https://xushuo.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="vue.js" scheme="https://xushuo.github.io/tags/vue-js/"/>
+    
+      <category term="教程" scheme="https://xushuo.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="前端" scheme="https://xushuo.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="进阶" scheme="https://xushuo.github.io/tags/%E8%BF%9B%E9%98%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>VUE官方教程随笔(基础篇)</title>
+    <link href="https://xushuo.github.io/2017/03/23/VUE%E5%AE%98%E6%96%B9%E6%95%99%E7%A8%8B%E9%9A%8F%E7%AC%94(%E5%9F%BA%E7%A1%80%E7%AF%87)/"/>
+    <id>https://xushuo.github.io/2017/03/23/VUE官方教程随笔(基础篇)/</id>
     <published>2017-03-23T03:36:54.000Z</published>
-    <updated>2017-03-24T10:03:02.330Z</updated>
+    <updated>2017-03-27T01:21:06.526Z</updated>
     
     <content type="html"><![CDATA[<p>好吧~酱酱本来在看es6的promise，偶然发现了VUE.JS,一不小心看了下大概，发现还挺有趣。所以索性就先把promise撂在一边，去官网学习下vue<em>.</em>。当然我也不确定这个会更新到什么时候，哈哈。</p>
 <hr>
@@ -400,6 +432,8 @@ bus.$on(&apos;id-selected&apos;, function (id) {
       <category term="教程" scheme="https://xushuo.github.io/tags/%E6%95%99%E7%A8%8B/"/>
     
       <category term="前端" scheme="https://xushuo.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="基础" scheme="https://xushuo.github.io/tags/%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
